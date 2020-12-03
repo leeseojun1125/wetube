@@ -19,7 +19,11 @@ const app = express();
 
 const CokieStore = MongoStore(session);
 
-app.use(helmet()); //보안 강화
+app.use(
+  helmet({
+    contentSecurityPolicy: false, //사진 보안 해제(?)
+  })
+); //보안 강화
 app.set("view engine", "pug");
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("static"));
