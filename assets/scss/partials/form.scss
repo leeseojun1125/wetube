@@ -1,52 +1,46 @@
-.form-container{
+.form-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    form{
+    border: none;
+    form {
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 50px;
+      input {
+        border: none;
+      }
+      input:not([type="file"]),
+      .fileUpload {
+        display: block;
         width: 100%;
-        max-width: 320px;
-        margin-bottom: 20px;
-        input:not([type="file"]),
-        .fileUpload {
-            display : block;
-            width: 100%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border : none;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            &:not(:last-child){
-                margin-bottom: 25px;
-            }
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        &:not(:last-child) {
+          margin-bottom: 25px;
         }
-        textarea{
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-            margin-bottom: 25px;
-            border : none;
-        }
-        input[type="submit"]{
-            background-color: #3498db;
-            color: white;
-        }
+      }
+      textarea {
+          width: 100%;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        margin-bottom: 25px;
+        border: none;
+      }
+      input[type="submit"] {
+        background-color: #3498db;
+        color: white;
+      }
     }
-    a{
-        max-width: 320px;
-        width: 100%;
-        button{
-            width: 100%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background-color: crimson;
-            color: white;
-            border : none;
-        }
+    a {
+      max-width: 320px;
+      width: 100%;
     }
-    
-    .fileUpload{
-        label{
-            font-weight: 300;
-            margin-right: 10px;
-        }
+    .fileUpload {
+      label {
+        font-weight: 300;
+        margin-right: 10px;
+      }
     }
-}
-
+  }
