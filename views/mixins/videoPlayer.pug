@@ -1,0 +1,20 @@
+mixin videoPlayer(video = {})
+    .videoPlayer#jsVideoPlayer
+        video(src=`/${video.src}`, controls = false)
+        .videoPlayer__controls
+            .videoPlayer__column
+                span
+                    i.fas.fa-volume-up
+                span
+                    |00:00 / 10:00
+            .videoPlayer__column
+                span#jsPlayButton
+                    i.fas.fa-play
+            .videoPlayer__column
+                span
+                    i.fas.fa-expand
+
+
+
+
+//- 항상 경로는 같은 절대경로로.`/${video.src}`

@@ -1,11 +1,18 @@
 extends layout/main
-
+include mixins/videoPlayer
+//-video.fileUrl은 upload.pug의 accept 참조
+//-loggedUser.id 는 비로그인상태에서 id를
+ 추출 할 수 없다. 비로그인 상태는 null 상태이기 때문이다. middleware참조
+ 그러므로 조건에 loggedUser을 붙여 로그인 된 상태에서 추출하도록 한다.
+ 그러면 오류 해결. 로그인된 상태는 id가 있기에..
+ 
 block content
     .video-detail__container
-        .video__player
-            video(src=`/${video.fileUrl}`)
+        +videoPlayer({
+            src:video.fileUrl 
+        }) 
         .video__info
-            if video.creator.id === loggedUser.id
+            if loggedUser && video.creator.id === loggedUser.id   
                 a(href=routes.editVideo(video.id)) 
                     button Edit Video
             h5.video__title=video.title
@@ -22,3 +29,4 @@ block content
                 span.video__comment-number 1 comment
             else
                 span.video__comment-number #{video.comments.length} comments
+
